@@ -12,21 +12,25 @@ const ArticleList: React.FC<IArticleListProps> = ({ articles }) => {
   return (
     <div className="flex article_wrapper">
       <div className="article-list">
-        {articles.map((article: Article) => (
-          <ArticleCard
-            key={article.id}
-            article={article}
-            onClick={() => handleOnArticleSelect(article)}
-          />
-        ))}
+        {articles.length ? (
+          articles.map((article: Article) => (
+            <ArticleCard
+              key={article.id}
+              article={article}
+              onClick={() => handleOnArticleSelect(article)}
+            />
+          ))
+        ) : (
+          <div>No Article Available</div>
+        )}
       </div>
       <div className="article-details">
         {articleDetails.title && (
           <ArticleDetails
-            title={articleDetails?.title}
-            abstract={articleDetails?.abstract}
-            url={articleDetails?.url}
-            media={articleDetails?.media}
+            title={articleDetails.title}
+            abstract={articleDetails.abstract}
+            url={articleDetails.url}
+            media={articleDetails.media}
           />
         )}
       </div>

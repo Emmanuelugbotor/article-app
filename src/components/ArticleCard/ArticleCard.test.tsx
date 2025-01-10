@@ -1,15 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ArticleCard from "./ArticleCard";
-import { Article } from "../../models/ApiResponse";
-
-type MockArticle = Pick<Article, "id" | "title" | "abstract">;
-
-const mockArticle: MockArticle = {
-  id: 1,
-  title: "Test Article",
-  abstract: "Test Abstract",
-};
+import { mockArticle } from "../../tests/mock/mockArticle";
 
 describe("ArticleCard", () => {
   test("renders article title", () => {
@@ -22,5 +14,17 @@ describe("ArticleCard", () => {
     render(<ArticleCard article={mockArticle} onClick={onClick} />);
     fireEvent.click(screen.getByText("Test Article"));
     expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  test("does not crash when no onClick is passed", () => {
+    render(<ArticleCard article={mockArticle} />);
+    expect(screen.getByText("Test Article")).toBeInTheDocument();
+  });
+
+  test("does not crash when  article title is missing", () => {
+    const invalidArticle = { ...mockArticle, title: '' };
+    render(<ArticleCard article={invalidArticle} onClick={() => {}} />);
+    expect(screen.getByTestId("article-card")).toBeInTheDocument();
+    
   });
 });

@@ -8,7 +8,7 @@ export interface UseFetchArticles {
 
 export interface IArticleCardProps {
   article: Article;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export interface IArticleListProps {
