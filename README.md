@@ -50,8 +50,8 @@ src/
 ---
 
 ## Prerequisites
-- **Node.js** (v16 or higher)
-- **npm** (v8 or higher) or **yarn**
+- **Node.js** (v18 or higher)
+- **npm** (v10 or higher) or **yarn**
 
 ---
 
@@ -71,13 +71,13 @@ src/
    ```plaintext
    VITE_API_KEY=<your-api-key-here>
    ```
-   Replace `<your-api-key-here>` with the actual API key.
+   Replace `<your-api-key-here>` with the actual API key sent via email or your api key.
 
 4. Start the development server:
    ```bash
    npm run dev
    ```
-   The application will be accessible at `http://localhost:3000`.
+   The application will be accessible at `http://localhost:5173/`.
 
 5. Build the project:
    ```bash
@@ -143,7 +143,7 @@ src/
   - **Statements**: 100%
   - **Functions**: 100%
   - **Lines**: 100%
-  - **Branches**: ~79%
+  - **Branches**: ~82%
 
 ### UI Testing
 - **Tools**: Cypress
@@ -185,7 +185,7 @@ Create a `.env` file in the root of the project and add the following:
 VITE_API_KEY=<your-api-key-here>
 ```
 
-Replace `<your-api-key-here>` with the actual API key.
+Replace `<your-api-key-here>` with the your API key or the api key I sent via email.
 
 ---
 
