@@ -77,11 +77,20 @@
   margin: 0;
 }
 
-div.fill p {
+.fill p {
   position: relative;
+  transition: all 2s;
+  cursor: pointer;
+}
+.fill p button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 18px;
+  text-align: left;
 }
 
-div.fill p:after {
+.fill p:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -92,24 +101,18 @@ div.fill p:after {
   color: transparent;
   background: #aaa;
   height: 1px;
-}
-
-div.fill p {
-  transition: all 2s;
-}
-
-div.fill p:after {
   text-align: left;
   content: ".";
   margin: 0;
   opacity: 0;
 }
 
-div.fill p:hover {
+.fill p:hover > button {
   color: #fff;
+  cursor: pointer;
 }
 
-div.fill p:hover:after {
+.fill p:hover:after {
   z-index: -10;
   animation: fill 1s forwards;
   -webkit-animation: fill 1s forwards;
