@@ -1,17 +1,11 @@
-import React, { Component, ReactNode } from "react";
-
-interface ErrorBoundaryProps {
-  children: ReactNode;
-}
-
-interface ErrorBoundaryState {
-  hasError: boolean;
-  error: Error | null;
-}
+import React, { Component } from "react";
+import {
+  ErrorBoundaryProps,
+  ErrorBoundaryState,
+} from "../../models/ErrorBoundary";
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
-    {/* istanbul ignore next */}
     super(props);
     this.state = { hasError: false, error: null };
   }
@@ -26,7 +20,6 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 
   render() {
-    {/* istanbul ignore next */}
     if (this.state.hasError) {
       return (
         <div style={{ textAlign: "center", padding: "20px" }}>

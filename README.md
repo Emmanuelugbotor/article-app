@@ -1,7 +1,7 @@
 # Dubai Municipality Test
 
 ## Project Overview
-This project is a React-based application designed to manage and display articles using modern JavaScript best practices. The application employs object-oriented principles, a well-structured UI architectural pattern, and state management using hooks. The project also includes robust unit and UI testing to ensure code reliability and maintainability.
+This project is a React-based application designed to manage and display articles using modern JavaScript best practices. The application employs object-oriented principles, a well-structured UI architectural pattern, and state management using hooks. The project also includes robust SonarQube analysis, unit and UI testing to ensure code reliability and maintainability.
 
 ---
 
@@ -31,6 +31,7 @@ src/
   models/
     ArticleResponse.ts
     Article.ts
+    ErrorBoundary.ts
   tests/
     mock/
       mockArticle.ts
@@ -45,7 +46,7 @@ src/
   - Unit tests using Jest and React Testing Library to achieve high code coverage.
   - UI tests using Cypress.
 - **Reusable Code**: Implements reusable, modular, and clean code using modern JavaScript best practices.
-- **Code Quality**: Linting and static code analysis are integrated for maintaining high code quality.
+- **Code Quality**: Linting (npm run lint), SonarQube test, Code quality, and static code analysis are integrated for maintaining high code quality.
 
 ---
 
@@ -193,6 +194,7 @@ Replace `<your-api-key-here>` with the your API key or the api key I sent via em
 - **Modern JavaScript**: The project uses ES6+ features for better readability and maintainability.
 - **TypeScript**: Strictly typed components and APIs for better developer experience and error handling.
 - **Cypress vs Puppeteer**: Only Cypress is used for UI testing to meet the requirement.
+- **SonarQube**: Integrated sonarQube for code quality analysis.
 
 ---
 

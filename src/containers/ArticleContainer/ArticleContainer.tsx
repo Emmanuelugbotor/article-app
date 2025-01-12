@@ -1,14 +1,9 @@
 import { Component } from "react";
 import ArticleList from "../../components/ArticleList/ArticleList";
 import { fetchArticles } from "../../api";
-import { Article } from "../../models/ApiResponse";
+import { UseFetchArticles } from "../../models/Article";
 
-interface State {
-  articles: Article[];
-  loading: boolean;
-  error: string | null;
-}
-
+type State = Pick<UseFetchArticles, "articles" | "loading" | "error">;
 class ArticleContainer extends Component<unknown, State> {
   state: State = {
     articles: [],
